@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rahinishri Portfolio</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#0f172a;
+  color:#e5e7eb;
+  overflow:hidden;
+}
+
+/* wrapper */
+.wrapper{
+  width:100vw;
+  height:100vh;
+  transition:transform 1.5s ease-in-out; /* slow */
+}
+
+/* slide */
+.slide{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+h1,h2{color:#22d3ee}
+
+/* hero image */
+.profile-pic{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  border:4px solid #22d3ee;
+  margin-bottom:20px;
+  object-fit:cover;
+  animation:float 5s ease-in-out infinite;
+}
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
+}
+
+/* content animation */
+.animate{
+  opacity:0;
+  transform:translateY(40px);
+  animation:appear 1.2s forwards;
+}
+@keyframes appear{
+  to{opacity:1; transform:translateY(0)}
+}
+
+/* table */
+table{
+  border-collapse:collapse;
+  width:90%;
+  max-width:700px;
+  margin:12px 0;
+}
+th,td{
+  border:1px solid #22d3ee;
+  padding:8px;
+}
+th{background:#1e293b}
+
+/* skills */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(2,160px);
+  gap:18px;
+  margin-top:20px;
+}
+.skill{
+  padding:12px;
+  border:1px solid #22d3ee;
+  border-radius:25px;
+  font-weight:bold;
+  opacity:0;
+  animation:appear 1.1s forwards;
+}
+
+/* dots */
+.dots{
+  position:fixed;
+  right:25px;
+  top:50%;
+  transform:translateY(-50%);
+}
+.dot{
+  width:12px;
+  height:12px;
+  background:#475569;
+  border-radius:50%;
+  margin:10px 0;
+  cursor:pointer;
+}
+.dot.active{
+  background:#22d3ee;
+  transform:scale(1.4);
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper" id="wrapper">
+
+  <!-- SLIDE 1 : HERO -->
+  <section class="slide">
+    <img src="C:\Users\Acer\Pictures\ra.jpeg" class="profile-pic">
+    <h1>Hello! I'm M. Rahinishri</h1>
+    <p>Frontend Developer</p>
+  </section>
+
+  <!-- SLIDE 2 : PERSONAL DETAILS -->
+  <section class="slide">
+    <h2 class="animate" style="animation-delay:.3s">Personal Details</h2>
+    <p class="animate" style="animation-delay:.7s">DOB : 01-04-2007</p>
+    <p class="animate" style="animation-delay:1.1s">Father : Muppidathi</p>
+    <p class="animate" style="animation-delay:1.5s">Mother : Rajammal</p>
+    <p class="animate" style="animation-delay:1.9s">Email : mrahini914@gmail.com</p>
+  </section>
+
+  <!-- SLIDE 3 : EDUCATION -->
+  <section class="slide">
+    <h2 class="animate" style="animation-delay:.3s">Education</h2>
+    
+    <table class="animate" style="animation-delay:.8s">
+      <tr><th>10th School</th><th>Marks</th></tr>
+      <tr><td>VVS High School</td><td>392</td></tr>
+    </table>
+    
+    <table class="animate" style="animation-delay:1.3s">
+      <tr><th>12th School</th><th>Marks</th></tr>
+      <tr><td>Government Girls Higher Secondary School</td><td>437</td></tr>
+    </table>
+    
+    <table class="animate" style="animation-delay:1.8s">
+      <tr>
+        <th>College</th>
+        <th>Sem 1</th>
+        <th>Sem 2</th>
+        <th>Sem 3</th>
+      </tr>
+      <tr>
+        <td>GVN College</td>
+        <td>97</td>
+        <td>95</td>
+        <td>97</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- SLIDE 4 : SKILLS -->
+  <section class="slide">
+    <h2 class="animate" style="animation-delay:.3s">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill" style="animation-delay:.8s">HTML</div>
+      <div class="skill" style="animation-delay:1.3s">CSS</div>
+      <div class="skill" style="animation-delay:1.8s">JavaScript</div>
+      <div class="skill" style="animation-delay:2.3s">Python</div>
+      <div class="skill" style="animation-delay:2.8s">C++</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 5 : CAREER AREA (MOVED BEFORE CONTACT) -->
+  <section class="slide">
+    <h2 class="animate" style="animation-delay:.3s">Career Area</h2>
+    <p class="animate" style="animation-delay:.8s">💻 Frontend Development</p>
+    <p class="animate" style="animation-delay:1.3s">🎨 UI / UX Design</p>
+    <p class="animate" style="animation-delay:1.8s">⚡ Web Applications</p>
+  </section>
+
+  <!-- SLIDE 6 : CONTACT -->
+  <section class="slide">
+    <h2 class="animate" style="animation-delay:.3s">Contact</h2>
+    <p class="animate" style="animation-delay:.7s">Name : M. Rahinishri</p>
+    <p class="animate" style="animation-delay:1.1s">Email : mrahini914@gmail.com</p>
+    <p class="animate" style="animation-delay:1.5s">Phone : 9XXXXXXXXX</p>
+  </section>
+
+</div>
+
+<div class="dots" id="dots"></div>
+
+<script>
+const wrapper=document.getElementById("wrapper");
+const slides=document.querySelectorAll(".slide");
+const dotsBox=document.getElementById("dots");
+let index=0;
+
+// create dots
+slides.forEach((_,i)=>{
+  const d=document.createElement("div");
+  d.className="dot";
+  d.onclick=()=>go(i);
+  dotsBox.appendChild(d);
+});
+dotsBox.children[0].classList.add("active");
+
+// go to slide
+function go(i){
+  index=i;
+  wrapper.style.transform=`translateY(-${i*100}vh)`;
+  document.querySelectorAll(".dot").forEach(d=>d.classList.remove("active"));
+  dotsBox.children[i].classList.add("active");
+}
+
+// mouse wheel
+window.addEventListener("wheel",e=>{
+  if(e.deltaY>0 && index<slides.length-1) go(index+1);
+  if(e.deltaY<0 && index>0) go(index-1);
+});
+</script>
+
+</body>
+</html>
